@@ -4,7 +4,7 @@ class zabbix::client::install {
 
   package { 'zabbix-agent':
     ensure	=> present,
-    require	=> Yumrepo{'zabbix'],
+    require	=> Yumrepo['zabbix'],
   }
 
   file { '/etc/zabbix/zabbix_agentd.conf':
@@ -13,6 +13,7 @@ class zabbix::client::install {
     mode	=> '644',
     owner	=> 'root',
     group	=> 'root',
+    require	=> Package['zabbix-agent'],
   }
 
 }

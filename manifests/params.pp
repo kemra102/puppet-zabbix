@@ -1,7 +1,6 @@
 class zabbix::params {
 
   # Zabbix Client (Agent) service variables
-  $client_service_manage	= 'true'
   $client_service_ensure	= 'running'
   $client_service_enable	= 'true'
 
