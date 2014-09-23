@@ -1,13 +1,10 @@
-class zabbix::client::service {
+class zabbix::client::service inherits zabbix::params {
 
-  # manage the service only if asked
-  if $::zabbix::client_service_manage == true {
-    service { 'zabbix-agent':
-      ensure		=> $::zabbix::client_service_ensure,
-      enable		=> $::zabbix::client_service_enable,
-      hasstatus		=> true,
-      hasrestart	=> true,
-    }
+  service { 'zabbix-agent':
+    ensure	=> $client_service_ensure,
+    enable	=> $client_service_enable,
+    hasstatus	=> true,
+    hasrestart	=> true,
   }
 
 }

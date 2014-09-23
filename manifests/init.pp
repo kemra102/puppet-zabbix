@@ -37,6 +37,5 @@
 #
 class zabbix {
 
-  include ::zabbix::params
 
 }

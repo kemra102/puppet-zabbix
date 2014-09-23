@@ -25,7 +25,7 @@ class zabbix::params {
   $client_maxlinespersecond	= ''
   $client_allowroot		= ''
   $client_alias			= ''
-  $client_tiemout		= ''
+  $client_timeout		= ''
   $client_include		= '/etc/zabbix/zabbix_agentd.d/'
   $client_unsafeuserparameters	= ''
   $client_userparameter		= ''
