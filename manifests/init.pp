@@ -35,7 +35,14 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class zabbix {
+class zabbix (
 
+  # Allow for overrides of variables in params.pp
+  $client_server        = $zabbix::params::client_server
+
+) inherits zabbix::params {
+
+  # Validate our variables
+  validate_string($client_server)
 
 }
