@@ -38,33 +38,33 @@
 class zabbix (
 
   # Allow for overrides of variables in params.pp
-  $client::service_ensure	= $zabbix::params::client::service_ensure
-  $client::service_enable	= $zabbix::params::client::service_enable
+  $client::service_ensure	= $zabbix::params::client::service_ensure,
+  $client::service_enable	= $zabbix::params::client::service_enable,
 
-  $client::pidfile		= $zabbix::params::client::pidfile
-  $client::logfile		= $zabbix::params::client::logfile
-  $client::logfilesize		= $zabbix::params::client::logfilesize
-  $client::debuglevel		= $zabbix::params::client::debuglevel
-  $client::sourceip		= $zabbix::params::client::sourceip
-  $client::enableremotecommands	= $zabbix::params::client::enableremotecommands
-  $client::logremotecommands	= $zabbix::params::client::logremotecommands
-  $client::server		= $zabbix::params::client::server
-  $client::listenport		= $zabbix::params::client::listenport
-  $client::listenip		= $zabbix::params::client::listenip
-  $client::startagents		= $zabbix::params::client::startagents
-  $client::serveractive		= $zabbix::params::client::serveractive
-  $client::hostname		= $zabbix::params::client::hostname
-  $client::hostnameitem		= $zabbix::params::client::hostnameitem
-  $client::refreshactivechecks	= $zabbix::params::client::refreshactivechecks
-  $client::buffersend		= $zabbix::params::client::buffersend
-  $client::buffersize		= $zabbix::params::client::buffersize
-  $client::maxlinespersecond	= $zabbix::params::client::maxlinespersecond
-  $client::allowroot		= $zabbix::params::client::allowroot
-  $client::alias		= $zabbix::params::client::alias
-  $client::timeout		= $zabbix::params::client::timeout
-  $client::include		= $zabbix::params::client::include
-  $client::unsafeuserparameters	= $zabbix::params::client::unsafeuserparameters
-  $client::userparameter	= $zabbix::params::client:userparameter
+  $client::pidfile		= $zabbix::params::client::pidfile,
+  $client::logfile		= $zabbix::params::client::logfile,
+  $client::logfilesize		= $zabbix::params::client::logfilesize,
+  $client::debuglevel		= $zabbix::params::client::debuglevel,
+  $client::sourceip		= $zabbix::params::client::sourceip,
+  $client::enableremotecommands	= $zabbix::params::client::enableremotecommands,
+  $client::logremotecommands	= $zabbix::params::client::logremotecommands,
+  $client::server		= $zabbix::params::client::server,
+  $client::listenport		= $zabbix::params::client::listenport,
+  $client::listenip		= $zabbix::params::client::listenip,
+  $client::startagents		= $zabbix::params::client::startagents,
+  $client::serveractive		= $zabbix::params::client::serveractive,
+  $client::hostname		= $zabbix::params::client::hostname,
+  $client::hostnameitem		= $zabbix::params::client::hostnameitem,
+  $client::refreshactivechecks	= $zabbix::params::client::refreshactivechecks,
+  $client::buffersend		= $zabbix::params::client::buffersend,
+  $client::buffersize		= $zabbix::params::client::buffersize,
+  $client::maxlinespersecond	= $zabbix::params::client::maxlinespersecond,
+  $client::allowroot		= $zabbix::params::client::allowroot,
+  $client::alias		= $zabbix::params::client::alias,
+  $client::timeout		= $zabbix::params::client::timeout,
+  $client::include		= $zabbix::params::client::include,
+  $client::unsafeuserparameters	= $zabbix::params::client::unsafeuserparameters,
+  $client::userparameter	= $zabbix::params::client:userparameter,
 
 ) inherits zabbix::params {
 
