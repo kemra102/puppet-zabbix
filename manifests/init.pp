@@ -39,7 +39,7 @@ class zabbix (
 
   # Allow for overrides of variables in params.pp
   $client::service_ensure	= $zabbix::params::client::service_ensure
-  $client::service enable	= $zabbix::params::client::service_enable
+  $client::service_enable	= $zabbix::params::client::service_enable
 
   $client::pidfile		= $zabbix::params::client::pidfile
   $client::logfile		= $zabbix::params::client::logfile
