@@ -35,7 +35,7 @@
 #
 # Copyright 2014 Danny Roberts
 #
-class zabbix (
+class zabbix {
 
   include ::zabbix::client
 
