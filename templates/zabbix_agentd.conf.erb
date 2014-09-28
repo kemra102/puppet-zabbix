@@ -11,7 +11,7 @@
 #
 # Mandatory: no
 # Default:
-PidFile=<%= @client::pidfile %>
+PidFile=<%= @pidfile %>
 
 ### Option: LogFile
 #       Name of log file.
@@ -19,7 +19,7 @@ PidFile=<%= @client::pidfile %>
 #
 # Mandatory: no
 # Default:
-LogFile=<%= @client::logfile %>
+LogFile=<%= @logfile %>
 
 ### Option: LogFileSize
 #       Maximum size of log file in MB.
@@ -29,8 +29,8 @@ LogFile=<%= @client::logfile %>
 # Range: 0-1024
 # Default:
 # LogFileSize=1
-<% if @client::logfilesize != '' %>
-LogFileSize=<%= @client::logfilesize %>
+<% if @logfilesize != '' %>
+LogFileSize=<%= @logfilesize %>
 <% end %>
 
 ### Option: DebugLevel
@@ -45,8 +45,8 @@ LogFileSize=<%= @client::logfilesize %>
 # Range: 0-4
 # Default:
 # DebugLevel=3
-<% if @client::debuglevel != '' %>
-DebugLevel=<%= @client::debuglevel %>
+<% if @debuglevel != '' %>
+DebugLevel=<%= @debuglevel %>
 <% end %>
 
 ### Option: SourceIP
@@ -54,8 +54,8 @@ DebugLevel=<%= @client::debuglevel %>
 #
 # Mandatory: no
 # Default:
-<% if @client::sourceip != '' %>
-SourceIP=<%= @client::sourceip %>
+<% if @sourceip != '' %>
+SourceIP=<%= @sourceip %>
 <% end %>
 
 ### Option: EnableRemoteCommands
@@ -66,8 +66,8 @@ SourceIP=<%= @client::sourceip %>
 # Mandatory: no
 # Default:
 # EnableRemoteCommands=0
-<% if @client::enableremotecommands != '' %>
-EnableRemoteCommands=<%= @client::enableremotecommands %>
+<% if @enableremotecommands != '' %>
+EnableRemoteCommands=<%= @enableremotecommands %>
 <% end %>
 
 ### Option: LogRemoteCommands
@@ -78,8 +78,8 @@ EnableRemoteCommands=<%= @client::enableremotecommands %>
 # Mandatory: no
 # Default:
 # LogRemoteCommands=0
-<% if @client::logremotecommands != '' %>
-LogRemoteCommands=<%= @client::logremotecommands %>
+<% if @logremotecommands != '' %>
+LogRemoteCommands=<%= @logremotecommands %>
 <% end %>
 
 ##### Passive checks related
@@ -92,8 +92,8 @@ LogRemoteCommands=<%= @client::logremotecommands %>
 #
 # Mandatory: no
 # Default:
-<% if @client::server != '' %>
-Server=<%= @client::server %>
+<% if @server != '' %>
+Server=<%= @server %>
 <% end %>
 
 ### Option: ListenPort
@@ -102,7 +102,7 @@ Server=<%= @client::server %>
 # Mandatory: no
 # Range: 1024-32767
 # Default:
-ListenPort=<%= @client::listenport %>
+ListenPort=<%= @listenport %>
 
 ### Option: ListenIP
 #       List of comma delimited IP addresses that the agent should listen on.
@@ -110,8 +110,8 @@ ListenPort=<%= @client::listenport %>
 #
 # Mandatory: no
 # Default:
-<% if @client::listenip != '' %>
-ListenIP=<%= @client::listenip %>
+<% if @listenip != '' %>
+ListenIP=<%= @listenip %>
 <% end %>
 
 ### Option: StartAgents
@@ -122,8 +122,8 @@ ListenIP=<%= @client::listenip %>
 # Range: 0-100
 # Default:
 # StartAgents=3
-<% if @client::startagents != '' %>
-StartAgents=<%= @client::startagents %>
+<% if @startagents != '' %>
+StartAgents=<%= @startagents %>
 <% end %>
 
 ##### Active checks related
@@ -138,8 +138,8 @@ StartAgents=<%= @client::startagents %>
 #
 # Mandatory: no
 # Default:
-<% if @client::serveractive != '' %>
-ServerActive=<%= @client::serveractive %>
+<% if @serveractive != '' %>
+ServerActive=<%= @serveractive %>
 <% end %>
 
 ### Option: Hostname
@@ -149,8 +149,8 @@ ServerActive=<%= @client::serveractive %>
 #
 # Mandatory: no
 # Default:
-<% if @client::hostname != '' %>
-Hostname=<%= @client::hostname %>
+<% if @hostname != '' %>
+Hostname=<%= @hostname %>
 <% end %>
 
 ### Option: HostnameItem
@@ -160,8 +160,8 @@ Hostname=<%= @client::hostname %>
 # Mandatory: no
 # Default:
 # HostnameItem=system.hostname
-<% if @client::hostnameitem != '' %>
-HostnameItem=<%= @client::hostnameitem %>
+<% if @hostnameitem != '' %>
+HostnameItem=<%= @hostnameitem %>
 <% end %>
 
 ### Option: RefreshActiveChecks
@@ -171,8 +171,8 @@ HostnameItem=<%= @client::hostnameitem %>
 # Range: 60-3600
 # Default:
 # RefreshActiveChecks=120
-<% if @client::refreshactivechecks != '' %>
-RefreshActiveChecks=<%= @client::refreshactivechecks %>
+<% if @refreshactivechecks != '' %>
+RefreshActiveChecks=<%= @refreshactivechecks %>
 <% end %>
 
 ### Option: BufferSend
@@ -182,8 +182,8 @@ RefreshActiveChecks=<%= @client::refreshactivechecks %>
 # Range: 1-3600
 # Default:
 # BufferSend=5
-<% if @client::buffersend != '' %>
-BufferSend=<%= @client::buffersend %>
+<% if @buffersend != '' %>
+BufferSend=<%= @buffersend %>
 <% end %>
 
 ### Option: BufferSize
@@ -194,8 +194,8 @@ BufferSend=<%= @client::buffersend %>
 # Range: 2-65535
 # Default:
 # BufferSize=100
-<% if @client::buffersize != '' %>
-BufferSize=<%= @client::buffersize %>
+<% if @buffersize != '' %>
+BufferSize=<%= @buffersize %>
 <% end %>
 
 ### Option: MaxLinesPerSecond
@@ -208,8 +208,8 @@ BufferSize=<%= @client::buffersize %>
 # Range: 1-1000
 # Default:
 # MaxLinesPerSecond=100
-<% if @client::maxlinespersecond != '' %>
-MaxLinesPerSecond=<%= @client::maxlinespersecond %>
+<% if @maxlinespersecond != '' %>
+MaxLinesPerSecond=<%= @maxlinespersecond %>
 <% end %>
 
 ### Option: AllowRoot
@@ -221,8 +221,8 @@ MaxLinesPerSecond=<%= @client::maxlinespersecond %>
 # Mandatory: no
 # Default:
 # AllowRoot=0
-<% if @client::allowroot != '' %>
-AllowRoot=<%= @client::allowroot %>
+<% if @allowroot != '' %>
+AllowRoot=<%= @allowroot %>
 <% end %>
 
 ############ ADVANCED PARAMETERS #################
@@ -233,8 +233,8 @@ AllowRoot=<%= @client::allowroot %>
 # Mandatory: no
 # Range:
 # Default:
-<% if @client::alias != '' %>
-Alias=<%= @client::alias %>
+<% if @alias != '' %>
+Alias=<%= @alias %>
 <% end %>
 
 ### Option: Timeout
@@ -244,8 +244,8 @@ Alias=<%= @client::alias %>
 # Range: 1-30
 # Default:
 # Timeout=3
-<% if @client::timeout != '' %>
-Timeout=<%= @client::timeout %>
+<% if @timeout != '' %>
+Timeout=<%= @timeout %>
 <% end %>
 
 ### Option: Include
@@ -254,7 +254,7 @@ Timeout=<%= @client::timeout %>
 #
 # Mandatory: no
 # Default:
-Include=<%= @client::include %>
+Include=<%= @include %>
 
 ####### USER-DEFINED MONITORED PARAMETERS #######
 
@@ -267,8 +267,8 @@ Include=<%= @client::include %>
 # Range: 0-1
 # Default:
 # UnsafeUserParameters=0
-<% if @client::unsafeuserparameters != '' %>
-UnsafeUserParameters=<%= @client::unsafeuserparameters %>
+<% if @unsafeuserparameters != '' %>
+UnsafeUserParameters=<%= @unsafeuserparameters %>
 <% end %>
 
 ### Option: UserParameter
@@ -279,6 +279,6 @@ UnsafeUserParameters=<%= @client::unsafeuserparameters %>
 # Mandatory: no
 # Default:
 # UserParameter=
-<% if @client::userparameter != '' %>
-UserParameter=<%= @client::userparameter %>
+<% if @userparameter != '' %>
+UserParameter=<%= @userparameter %>
 <% end %>
