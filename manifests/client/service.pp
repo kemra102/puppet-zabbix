@@ -6,6 +6,7 @@ class zabbix::client::service inherits zabbix::params {
     hasstatus         => true,
     hasrestart        => true,
     require           => File['/etc/zabbix/zabbix_agentd.conf'],
+    subscribe         => File['/etc/zabbix/zabbix_agentd.conf'],
   }
 
 }

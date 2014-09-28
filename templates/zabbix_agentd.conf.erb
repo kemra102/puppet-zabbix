@@ -11,7 +11,7 @@
 #
 # Mandatory: no
 # Default:
-PidFile=<%= scope.lookupvar('::zabbix::params::client_pidfile') %>
+PidFile=<%= @client::pidfile %>
 
 ### Option: LogFile
 #       Name of log file.
@@ -19,7 +19,7 @@ PidFile=<%= scope.lookupvar('::zabbix::params::client_pidfile') %>
 #
 # Mandatory: no
 # Default:
-LogFile=<%= scope.lookupvar('::zabbix::params::client_logfile') %>
+LogFile=<%= @client::logfile %>
 
 ### Option: LogFileSize
 #       Maximum size of log file in MB.
@@ -29,8 +29,8 @@ LogFile=<%= scope.lookupvar('::zabbix::params::client_logfile') %>
 # Range: 0-1024
 # Default:
 # LogFileSize=1
-<% if scope.lookupvar('::zabbix::params::client_logfilesize') != '' %>
-LogFileSize=<%= scope.lookupvar('::zabbix::params::client_logfilesize') %>
+<% if @client::logfilesize != '' %>
+LogFileSize=<%= @client::logfilesize %>
 <% end %>
 
 ### Option: DebugLevel
@@ -45,8 +45,8 @@ LogFileSize=<%= scope.lookupvar('::zabbix::params::client_logfilesize') %>
 # Range: 0-4
 # Default:
 # DebugLevel=3
-<% if scope.lookupvar('::zabbix::params::client_debuglevel') != '' %>
-DebugLevel=<%= scope.lookupvar('::zabbix::params::client_debuglevel') %>
+<% if @client::debuglevel != '' %>
+DebugLevel=<%= @client::debuglevel %>
 <% end %>
 
 ### Option: SourceIP
@@ -54,8 +54,8 @@ DebugLevel=<%= scope.lookupvar('::zabbix::params::client_debuglevel') %>
 #
 # Mandatory: no
 # Default:
-<% if scope.lookupvar('::zabbix::params::client_sourceip') != '' %>
-SourceIP=<%= scope.lookupvar('::zabbix::params::client_sourceip') %>
+<% if @client::sourceip != '' %>
+SourceIP=<%= @client::sourceip %>
 <% end %>
 
 ### Option: EnableRemoteCommands
@@ -66,8 +66,8 @@ SourceIP=<%= scope.lookupvar('::zabbix::params::client_sourceip') %>
 # Mandatory: no
 # Default:
 # EnableRemoteCommands=0
-<% if scope.lookupvar('::zabbix::params::client_enableremotecommands') != '' %>
-EnableRemoteCommands=<%= scope.lookupvar('::zabbix::params::client_enableremotecommands') %>
+<% if @client::enableremotecommands != '' %>
+EnableRemoteCommands=<%= @client::enableremotecommands %>
 <% end %>
 
 ### Option: LogRemoteCommands
@@ -78,8 +78,8 @@ EnableRemoteCommands=<%= scope.lookupvar('::zabbix::params::client_enableremotec
 # Mandatory: no
 # Default:
 # LogRemoteCommands=0
-<% if scope.lookupvar('::zabbix::params::client_logremotecommands') != '' %>
-LogRemoteCommands=<%= scope.lookupvar('::zabbix::params::client_logremotecommands') %>
+<% if @client::logremotecommands != '' %>
+LogRemoteCommands=<%= @client::logremotecommands %>
 <% end %>
 
 ##### Passive checks related
@@ -92,8 +92,8 @@ LogRemoteCommands=<%= scope.lookupvar('::zabbix::params::client_logremotecommand
 #
 # Mandatory: no
 # Default:
-<% if scope.lookupvar('::zabbix::params::client_server') != '' %>
-Server=<%= scope.lookupvar('::zabbix::params::client_server') %>
+<% if @client::server != '' %>
+Server=<%= @client::server %>
 <% end %>
 
 ### Option: ListenPort
@@ -102,7 +102,7 @@ Server=<%= scope.lookupvar('::zabbix::params::client_server') %>
 # Mandatory: no
 # Range: 1024-32767
 # Default:
-ListenPort=<%= scope.lookupvar('::zabbix::params::client_listenport') %>
+ListenPort=<%= @client::listenport %>
 
 ### Option: ListenIP
 #       List of comma delimited IP addresses that the agent should listen on.
@@ -110,8 +110,8 @@ ListenPort=<%= scope.lookupvar('::zabbix::params::client_listenport') %>
 #
 # Mandatory: no
 # Default:
-<% if scope.lookupvar('::zabbix::params::client_listenip') != '' %>
-ListenIP=<%= scope.lookupvar('::zabbix::params::client_listenip') %>
+<% if @client::listenip != '' %>
+ListenIP=<%= @client::listenip %>
 <% end %>
 
 ### Option: StartAgents
@@ -122,8 +122,8 @@ ListenIP=<%= scope.lookupvar('::zabbix::params::client_listenip') %>
 # Range: 0-100
 # Default:
 # StartAgents=3
-<% if scope.lookupvar('::zabbix::params::client_startagents') != '' %>
-StartAgents=<%= scope.lookupvar('::zabbix::params::client_startagents') %>
+<% if @client::startagents != '' %>
+StartAgents=<%= @client::startagents %>
 <% end %>
 
 ##### Active checks related
@@ -138,8 +138,8 @@ StartAgents=<%= scope.lookupvar('::zabbix::params::client_startagents') %>
 #
 # Mandatory: no
 # Default:
-<% if scope.lookupvar('::zabbix::params::client_serveractive') != '' %>
-ServerActive=<%= scope.lookupvar('::zabbix::params::client_serveractive') %>
+<% if @client::serveractive != '' %>
+ServerActive=<%= @client::serveractive %>
 <% end %>
 
 ### Option: Hostname
@@ -149,8 +149,8 @@ ServerActive=<%= scope.lookupvar('::zabbix::params::client_serveractive') %>
 #
 # Mandatory: no
 # Default:
-<% if scope.lookupvar('::zabbix::params::client_hostname') != '' %>
-Hostname=<%= scope.lookupvar('::zabbix::params::client_hostname') %>
+<% if @client::hostname != '' %>
+Hostname=<%= @client::hostname %>
 <% end %>
 
 ### Option: HostnameItem
@@ -160,8 +160,8 @@ Hostname=<%= scope.lookupvar('::zabbix::params::client_hostname') %>
 # Mandatory: no
 # Default:
 # HostnameItem=system.hostname
-<% if scope.lookupvar('::zabbix::params::client_hostnameitem') != '' %>
-HostnameItem=<%= scope.lookupvar('::zabbix::params::client_hostnameitem') %>
+<% if @client::hostnameitem != '' %>
+HostnameItem=<%= @client::hostnameitem %>
 <% end %>
 
 ### Option: RefreshActiveChecks
@@ -171,8 +171,8 @@ HostnameItem=<%= scope.lookupvar('::zabbix::params::client_hostnameitem') %>
 # Range: 60-3600
 # Default:
 # RefreshActiveChecks=120
-<% if scope.lookupvar('::zabbix::params::client_refreshactivechecks') != '' %>
-RefreshActiveChecks=<%= scope.lookupvar('::zabbix::params::client_refreshactivechecks') %>
+<% if @client::refreshactivechecks != '' %>
+RefreshActiveChecks=<%= @client::refreshactivechecks %>
 <% end %>
 
 ### Option: BufferSend
@@ -182,8 +182,8 @@ RefreshActiveChecks=<%= scope.lookupvar('::zabbix::params::client_refreshactivec
 # Range: 1-3600
 # Default:
 # BufferSend=5
-<% if scope.lookupvar('::zabbix::params::client_buffersend') != '' %>
-BufferSend=<%= scope.lookupvar('::zabbix::params::client_buffersend') %>
+<% if @client::buffersend != '' %>
+BufferSend=<%= @client::buffersend %>
 <% end %>
 
 ### Option: BufferSize
@@ -194,8 +194,8 @@ BufferSend=<%= scope.lookupvar('::zabbix::params::client_buffersend') %>
 # Range: 2-65535
 # Default:
 # BufferSize=100
-<% if scope.lookupvar('::zabbix::params::client_buffersize') != '' %>
-BufferSize=<%= scope.lookupvar('::zabbix::params::client_buffersize') %>
+<% if @client::buffersize != '' %>
+BufferSize=<%= @client::buffersize %>
 <% end %>
 
 ### Option: MaxLinesPerSecond
@@ -208,8 +208,8 @@ BufferSize=<%= scope.lookupvar('::zabbix::params::client_buffersize') %>
 # Range: 1-1000
 # Default:
 # MaxLinesPerSecond=100
-<% if scope.lookupvar('::zabbix::params::client_maxlinespersecond') != '' %>
-MaxLinesPerSecond=<%= scope.lookupvar('::zabbix::params::client_maxlinespersecond') %>
+<% if @client::maxlinespersecond != '' %>
+MaxLinesPerSecond=<%= @client::maxlinespersecond %>
 <% end %>
 
 ### Option: AllowRoot
@@ -221,8 +221,8 @@ MaxLinesPerSecond=<%= scope.lookupvar('::zabbix::params::client_maxlinespersecon
 # Mandatory: no
 # Default:
 # AllowRoot=0
-<% if scope.lookupvar('::zabbix::params::client_allowroot') != '' %>
-AllowRoot=<%= scope.lookupvar('::zabbix::params::client_allowroot') %>
+<% if @client::allowroot != '' %>
+AllowRoot=<%= @client::allowroot %>
 <% end %>
 
 ############ ADVANCED PARAMETERS #################
@@ -233,8 +233,8 @@ AllowRoot=<%= scope.lookupvar('::zabbix::params::client_allowroot') %>
 # Mandatory: no
 # Range:
 # Default:
-<% if scope.lookupvar('::zabbix::params::client_alias') != '' %>
-Alias=<%= scope.lookupvar('::zabbix::params::client_alias') %>
+<% if @client::alias != '' %>
+Alias=<%= @client::alias %>
 <% end %>
 
 ### Option: Timeout
@@ -244,8 +244,8 @@ Alias=<%= scope.lookupvar('::zabbix::params::client_alias') %>
 # Range: 1-30
 # Default:
 # Timeout=3
-<% if scope.lookupvar('::zabbix::params::client_timeout') != '' %>
-Timeout=<%= scope.lookupvar('::zabbix::params::client_timeout') %>
+<% if @client::timeout != '' %>
+Timeout=<%= @client::timeout %>
 <% end %>
 
 ### Option: Include
@@ -254,7 +254,7 @@ Timeout=<%= scope.lookupvar('::zabbix::params::client_timeout') %>
 #
 # Mandatory: no
 # Default:
-Include=<%= scope.lookupvar('::zabbix::params::client_include') %>
+Include=<%= @client::include %>
 
 ####### USER-DEFINED MONITORED PARAMETERS #######
 
@@ -267,8 +267,8 @@ Include=<%= scope.lookupvar('::zabbix::params::client_include') %>
 # Range: 0-1
 # Default:
 # UnsafeUserParameters=0
-<% if scope.lookupvar('::zabbix::params::client_unsafeuserparameters') != '' %>
-UnsafeUserParameters=<%= scope.lookupvar('::zabbix::params::client_unsafeuserparameters') %>
+<% if @client::unsafeuserparameters != '' %>
+UnsafeUserParameters=<%= @client::unsafeuserparameters %>
 <% end %>
 
 ### Option: UserParameter
@@ -279,6 +279,6 @@ UnsafeUserParameters=<%= scope.lookupvar('::zabbix::params::client_unsafeuserpar
 # Mandatory: no
 # Default:
 # UserParameter=
-<% if scope.lookupvar('::zabbix::params::client_userparameter') != '' %>
-UserParameter=<%= scope.lookupvar('::zabbix::params::client_userparameter') %>
+<% if @client::userparameter != '' %>
+UserParameter=<%= @client::userparameter %>
 <% end %>
