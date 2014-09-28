@@ -64,7 +64,7 @@ class zabbix (
   $client::timeout		= $zabbix::params::client::timeout,
   $client::include		= $zabbix::params::client::include,
   $client::unsafeuserparameters	= $zabbix::params::client::unsafeuserparameters,
-  $client::userparameter	= $zabbix::params::client:userparameter,
+  $client::userparameter	= $zabbix::params::client::userparameter,
 
 ) inherits zabbix::params {
 
