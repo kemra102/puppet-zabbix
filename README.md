@@ -20,8 +20,7 @@ Module for managing Zabbix Server & Client.
 
 ##Module Description
 
-The zabbix module currently only supports installing and configuring the Zabbix client (agent). Furture support is planned for the se
-rver, UserParameters and more.
+The zabbix module currently only supports installing and configuring the Zabbix client (agent). Furture support is planned for the server, UserParameters and more.
 
 ##Setup
 
