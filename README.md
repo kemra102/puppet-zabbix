@@ -260,11 +260,10 @@ This module has been tested against the latest version of Puppet from the Puppet
 
 The module has been tested on:
 
-* CentOS 6.5
+* CentOS 5.10/6.5
 
 This module should work fine on:
 
-* CentOS 5
 * Red Hat 5/6
 * Scientific Linux 5/6
 
