@@ -1,6 +1,6 @@
 {
   "name": "kemra102-zabbix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Danny Roberts",
   "license": "BSD 2-Clause",
   "summary": "Module for managing Zabbix Server & Client.",
@@ -17,8 +17,8 @@
     "operatingsystem": "CentOS",
     "operatingsystemrelease": [ "5.10", "6.5" ]
     }
-   ]
+   ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0" },
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0" }
   ]
 }
