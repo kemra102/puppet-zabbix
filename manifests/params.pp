@@ -30,17 +30,49 @@ class zabbix::params {
   $client_unsafeuserparameters  = ''
   $client_userparameter         = ''
 
-  # Set the version of Zabbix to be installed
-  # CentOS 5 only goes up to Zabbix 2.2 so we need a case here
-  case $::operatingsystemmajrelease {
-    '5': {
-      $version = '2.2'
+  # Set OS & OS release specific variables
+  case $::operatingsystem {
+    'CentOS': {
+      case $::operatingsystemmajrelease {
+        '5': {
+          $version = '2.2'
+        }
+        '6': {
+          $version = '2.4'
+        }
+        default: {
+          fail("${::operatingsystem} ${::operatingsystemmajrelease} is not supported by this module.")
+        }
+      }
     }
-    '6': {
-      $version = '2.4'
+    'Ubuntu': {
+      case $::operatingsystemmajrelease {
+        '10.04': {
+          $version = '2.2'
+        }
+        '12.04': {
+          $version = '2.2'
+        }
+        '14.04': {
+          $version = '2.4'
+        }
+        default: {
+          fail("${::operatingsystem} ${::operatingsystemmajrelease} is not supported by this module.")
+        }
+      }
     }
-    default: {
-      $version = ''
+    'Debian': {
+      case $::operatingsystemmajrelease {
+        '7': {
+          $version = '2.4'
+        }
+        '6': {
+          $version = '2.2'
+        }
+        default: {
+          fail("${::operatingsystem} ${::operatingsystemmajrelease} is not supported by this module.")
+        }
+      }
     }
   }
 
