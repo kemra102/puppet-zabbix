@@ -1,7 +1,7 @@
 class zabbix::repo inherits zabbix::params {
 
   case $::osfamily {
-    'RedHat' {
+    'RedHat': {
       yumrepo { 'zabbix':
         ensure		=> present,
         descr		=> 'Zabbix Official Repository - $basearch',
