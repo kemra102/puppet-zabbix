@@ -1,6 +1,6 @@
 {
   "name": "kemra102-zabbix",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Danny Roberts",
   "license": "BSD 2-Clause",
   "summary": "Module for managing Zabbix Server & Client.",
@@ -11,14 +11,23 @@
   "operatingsystem_support": [
     {
     "operatingsystem":"RedHat",
-    "operatingsystemrelease":[ "5.10", "6.5" ]
+    "operatingsystemrelease":[ "5.11", "6.5" ]
     },
     {
     "operatingsystem": "CentOS",
-    "operatingsystemrelease": [ "5.10", "6.5" ]
+    "operatingsystemrelease": [ "5.11", "6.5" ]
+    },
+    {
+    "operatingsystem": "Ubuntu",
+    "operatingsystemrelease": [ "10.04", "12.04", "14.04" ]
+    },
+    {
+    "operatingsystem": "Debian",
+    "operatingsystemrelease": [ "6", "7" ]
     }
    ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0" }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=3.2.0" },
+    { "name": "puppetlabs/apt", "version_requirement": ">=1.0.0" }
   ]
 }

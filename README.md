@@ -91,6 +91,17 @@ zabbix::client::listenip: %{::ipaddress_em2}
 * zabbix::client::install: Sets up the Zabbix repo, installs the `zabbix-agent` package and manages the zabbix client configuration file.
 * zabbix::client::service: Manages the `zabbix-agent` service.
 
+###Global Parameters
+
+####`version`
+
+Sets the version of Zabbix to be used.
+
+Defaults:
+
+* EL 6, Ubuntu 14.04 & Debian 7: 2.4
+* Others: 2.2
+
 ###Client Parameters
 
 ####`service_ensure`
@@ -260,16 +271,15 @@ This module has been tested against the latest version of Puppet from the Puppet
 The module has been tested on:
 
 * CentOS 5.10/6.5
+* Ubuntu 14.04.1
 
-This module should work fine on:
+This module should also work fine on:
 
-* Red Hat 5/6
+* Red Hat Enterprise Linux 5/6
 * Scientific Linux 5/6
-
-Future support is planned for:
-
-* Ubuntu 10.04, 12.04 & 14.04
-* Debian 7
+* Oracle Linux 5/6
+* Ubuntu 10.04/12.04
+* Debian GNU/Linux 6/7
 
 ##Development
 
