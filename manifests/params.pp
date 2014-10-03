@@ -48,7 +48,7 @@ class zabbix::params {
     'Ubuntu': {
       case $::operatingsystemmajrelease {
         '10.04': {
-          $version = '2.2'
+          $version = '2.0'
         }
         '12.04': {
           $version = '2.2'
