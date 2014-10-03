@@ -100,7 +100,8 @@ Sets the version of Zabbix to be used.
 Defaults:
 
 * EL 6, Ubuntu 14.04 & Debian 7: 2.4
-* Others: 2.2
+* EL 5, Ubuntu 12.04 & Debian 6: 2.2
+* Ubuntu 10.04: 2.0
 
 ###Client Parameters
 
@@ -271,15 +272,14 @@ This module has been tested against the latest version of Puppet from the Puppet
 The module has been tested on:
 
 * CentOS 5.10/6.5
-* Ubuntu 14.04.1
+* Ubuntu 10.04/12.04/14.04
+* Debian 6/7
 
 This module should also work fine on:
 
 * Red Hat Enterprise Linux 5/6
 * Scientific Linux 5/6
 * Oracle Linux 5/6
-* Ubuntu 10.04/12.04
-* Debian GNU/Linux 6/7
 
 ##Development
 
@@ -288,7 +288,6 @@ This module is open source under the **BSD 2-Clause** license and contributions 
 Areas of particular interest that help would be appreciated in:
 
 * Testing
-* Adding support for other platforms
 * Adding missing functionality
 * Filing bugfixes
 * Documentation improvements
