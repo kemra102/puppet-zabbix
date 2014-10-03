@@ -1,0 +1,9 @@
+v0.1.1
+
+* Initial release, support for Zabbix Client (Agent) on RedHat family 5 & 6.
+
+v0.2.0
+
+* Added support for Ubuntu (10.04, 12.04 & 14.04) & Debian (6/squeeze & 7/wheezy).
+* Documented previously undocumented global variable that affects the version of zabbix that is installed.
+* Fixed some documentation typos.
