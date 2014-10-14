@@ -1,6 +1,7 @@
 class zabbix::client (
 
   # Allow for overrides of variables in params.pp
+  $service_manage       = $zabbix::params::client_service_manage,
   $service_ensure       = $zabbix::params::client_service_ensure,
   $service_enable       = $zabbix::params::client_service_enable,
 
@@ -32,6 +33,7 @@ class zabbix::client (
   ) inherits zabbix::params {
 
   # Validate our variables
+  validate_bool($client::service_manage)
   validate_string($client::service_ensure)
   validate_bool($client::service_enable)
 
