@@ -105,6 +105,12 @@ Defaults:
 
 ###Client Parameters
 
+####`service_manage`
+
+Boolean whether or not to manage the zabbix-agent service.
+
+Default: `true`
+
 ####`service_ensure`
 
 Whether or not the service should be one of 2 values; `running` or `stopped`.

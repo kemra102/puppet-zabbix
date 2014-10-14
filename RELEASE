@@ -7,3 +7,7 @@ v0.2.0
 * Added support for Ubuntu (10.04, 12.04 & 14.04) & Debian (6/squeeze & 7/wheezy).
 * Documented previously undocumented global variable that affects the version of zabbix that is installed.
 * Fixed some documentation typos.
+
+NEXT
+
+* Added $zabbix::client::service_manage parameter as per Issue 1: https://github.com/kemra102/puppet-zabbix/issues/1
