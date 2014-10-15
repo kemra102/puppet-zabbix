@@ -33,7 +33,7 @@ class zabbix::params {
 
   # Set OS & OS release specific variables
   case $::operatingsystem {
-    'CentOS': {
+    'CentOS','RedHat','Scientific','OracleLinux': {
       case $::operatingsystemmajrelease {
         '5': {
           $version = '2.2'
