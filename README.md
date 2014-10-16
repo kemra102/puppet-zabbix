@@ -277,15 +277,15 @@ This module has been tested against the latest version of Puppet from the Puppet
 
 The module has been tested on:
 
-* CentOS 5.10/6.5
+* CentOS 5.11/6.5
+* Scientific Linux 5.10/6.5
+* Oracle Linux 5.11/6.5
 * Ubuntu 10.04/12.04/14.04
 * Debian 6/7
 
 This module should also work fine on:
 
 * Red Hat Enterprise Linux 5/6
-* Scientific Linux 5/6
-* Oracle Linux 5/6
 
 ##Development
 
@@ -293,7 +293,7 @@ This module is open source under the **BSD 2-Clause** license and contributions 
 
 Areas of particular interest that help would be appreciated in:
 
-* Testing
+* Testing (Particularly on RHEL systems)
 * Adding missing functionality
 * Filing bugfixes
 * Documentation improvements

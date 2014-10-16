@@ -8,6 +8,8 @@ v0.2.0
 * Documented previously undocumented global variable that affects the version of zabbix that is installed.
 * Fixed some documentation typos.
 
-NEXT
+v0.2.1
 
 * Added $zabbix::client::service_manage parameter as per Issue 1: https://github.com/kemra102/puppet-zabbix/issues/1
+* Fixed support for RedHat, Scientific Linux & Oracle Linux as per Issue 2: https://github.com/kemra102/puppet-zabbix/issues/2
+* Confirmed module running on Scientific Linux & Oracle Linux.
