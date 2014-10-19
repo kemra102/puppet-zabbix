@@ -117,7 +117,7 @@ Whether or not the service should be one of 2 values; `running` or `stopped`.
 
 Default: `running`
 
-####`service enable`
+####`service_enable`
 
 Boolean whether or not the service should be started on system boot.
 
@@ -166,7 +166,7 @@ Whether remote commands from Zabbix server are allowed:
 
 Default: `0`
 
-####`logremote commands`
+####`logremotecommands`
 
 Enable logging of executed shell commands as warnings:
 
