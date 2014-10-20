@@ -9,7 +9,8 @@
     * [Setup requirements](#setup-requirements)
     * [Beginning with zabbix](#beginning-with-zabbix)
 4. [Usage - Configuration options and additional functionality](#usage)
-    * [Usage - Zabbix Client (Agent)](#usage-zabbix-client)
+    * [Usage - Zabbix Client (Agent)](#zabbix-client)
+    * [Usage - UserParameters](#userparameters)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
@@ -20,7 +21,7 @@ Module for managing Zabbix Server & Client.
 
 ##Module Description
 
-The zabbix module currently only supports installing and configuring the Zabbix client (agent). Furture support is planned for the server, UserParameters and more.
+The zabbix module currently only supports installing and configuring the Zabbix client (agent), as well as creating UserParameters. Furture support is planned for the server and proxies.
 
 ##Setup
 
@@ -29,6 +30,7 @@ The zabbix module currently only supports installing and configuring the Zabbix 
 * zabbix-agent package.
 * zabbix client (agent) configuration file
 * zabbix-agent service.
+* UserParameters
 
 ###Beginning with zabbix
 
@@ -53,7 +55,7 @@ zabbix::client::server: '192.168.32.100'
 
 Managing the zabbix client is done through the `::zabbix::client` class including affecting it's variables.
 
-###Usage - Zabbix Client
+###Zabbix Client
 
 ####I just want Zabbix Client, what's the minimum I need?
 
@@ -69,7 +71,7 @@ class { '::zabbix::client':
 }
 ```
 
-###We have a custom set-up and use Hiera to set our config.
+####We have a custom set-up and use Hiera to set our config.
 
 ```puppet
 ---
@@ -77,6 +79,27 @@ zabbix::client::server: '192.168.32.100'
 zabbix::client::listenport: '10051'
 zabbix::client::listenip: %{::ipaddress_em2}
 ```
+###UserParameters
+
+To create a user parameter include the following in your config:
+
+```puppet
+zabbix::client::userparameter { 'mysql':
+  key     => 'mysql.ping',
+  command => 'mysqladmin -uroot ping|grep -c alive',
+}
+```
+
+You can also include an optional **comment** option:
+
+```puppet
+zabbix::client::userparameter { 'mysql':
+  comment => 'Check if MySQL is alive.',
+  key     => 'mysql.ping',
+  command => 'mysqladmin -uroot ping|grep -c alive',
+}
+```
+
 ##Reference
 
 ###Classes
