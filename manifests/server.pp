@@ -22,4 +22,7 @@ class zabbix::server (
   validate_string($service_ensure)
   validate_bool($service_enable)
 
+  include ::zabbix::server::install
+  include ::zabbix::server::service
+
 }
