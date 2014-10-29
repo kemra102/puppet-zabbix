@@ -15,6 +15,14 @@ class zabbix::server::service (
       require           => File['/etc/zabbix/zabbix_server.conf'],
       subscribe         => File['/etc/zabbix/zabbix_server.conf'],
     }
+    service { 'httpd':
+      ensure            => $service_ensure,
+      enable            => $service_enable,
+      hasstatus         => true,
+      hasrestart        => true,
+      require           => Service['zabbix-server'],
+      subscribe         => Service['zabbix-server'],
+    }
   }
 
 }
