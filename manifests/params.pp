@@ -36,7 +36,7 @@ class zabbix::params {
   $server_web				= true
   $server_web_japanese			= false
 
-  # Zabbix Service service variables
+  # Zabbix Server service variables
   $server_service_manage        	= true
   $server_service_ensure        	= 'running'
   $server_service_enable        	= true
