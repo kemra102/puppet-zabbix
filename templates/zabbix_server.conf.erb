@@ -20,7 +20,7 @@ ListenPort=<%= @listenip %>
 # Mandatory: no
 # Default:
 # SourceIP=
-<% if @sourceip != undef %>
+<% if @sourceip %>
 SourceIP<%= @sourceip %>
 <% end %>
 
@@ -81,7 +81,7 @@ DBName=<%= @dbname %>
 #       Schema name. Used for IBM DB2 and PostgreSQL.
 #
 # Mandatory: no
-<% if @dbschema != undef %>
+<% if @dbschema %>
 DBSchema=<%= @dbschema %>
 <% end %>
 
@@ -97,7 +97,7 @@ DBUser=<%= @dbuser %>
 #       Comment this line if no password is used.
 #
 # Mandatory: no
-<% if @dbpassword != undef %>
+<% if @dbpassword %>
 DBPassword=<%= @dbpassword %>
 <% end %>
 
@@ -106,7 +106,7 @@ DBPassword=<%= @dbpassword %>
 #
 # Mandatory: no
 # Default: /var/lib/mysql/mysql.sock
-<% if @dbsocket != undef %>
+<% if @dbsocket %>
 DBSocket=<%= @dbsocket %>
 <% end %>
 
@@ -119,7 +119,7 @@ DBSocket=<%= @dbsocket %>
 # DBPort=3306
 # Default (for PostgreSQL:
 # DBPort=5432
-<% if @dbport != undef %>
+<% if @dbport %>
 DBPort=<%= @dbport %>
 <% end %>
 
@@ -132,7 +132,7 @@ DBPort=<%= @dbport %>
 # Range: 0-1000
 # Default:
 # StartPollers=5
-<% if @startpollers != undef %>
+<% if @startpollers %>
 StartPollers=<%= @startpollers %>
 <% end %>
 
@@ -143,7 +143,7 @@ StartPollers=<%= @startpollers %>
 # Range: 0-1000
 # Default:
 # StartIPMIPollers=0
-<% if @startipmipollers != undef %>
+<% if @startipmipollers %>
 StartIPMIPollers=<%= @startipmipollers %>
 <% end %>
 
@@ -156,7 +156,7 @@ StartIPMIPollers=<%= @startipmipollers %>
 # Range: 0-1000
 # Default:
 # StartPollersUnreachable=1
-<% if @startpollersunreachable != undef %>
+<% if @startpollersunreachable %>
 StartPollersUnreachable=<%= @startpollersunreachable %>
 <% end %>
 
@@ -170,7 +170,7 @@ StartPollersUnreachable=<%= @startpollersunreachable %>
 # Range: 0-1000
 # Default:
 # StartTrappers=5
-<% if @starttrappers != undef %>
+<% if @starttrappers %>
 StartTrappers=<%= @starttrappers %>
 <% end %>
 
@@ -181,7 +181,7 @@ StartTrappers=<%= @starttrappers %>
 # Range: 0-1000
 # Default:
 # StartPingers=1
-<% if @startpingers != undef %>
+<% if @startpingers %>
 StartPingers=<%= @startpingers %>
 <% end %>
 
@@ -192,7 +192,7 @@ StartPingers=<%= @startpingers %>
 # Range: 0-250
 # Default:
 # StartDiscoverers=1
-<% if @startdiscoverers != undef %>
+<% if @startdiscoverers %>
 StartDiscoverers=<%= @startdiscoverers %>
 <% end %>
 
@@ -203,7 +203,7 @@ StartDiscoverers=<%= @startdiscoverers %>
 # Range: 0-1000
 # Default:
 # StartHTTPPollers=1
-<% if @starthttppollers != undef %>
+<% if @starthttppollers %>
 StartHTTPPollers=<%= @starthttppollers %>
 <% end %>
 
@@ -216,7 +216,7 @@ StartHTTPPollers=<%= @starthttppollers %>
 # Range: 1-1000
 # Default:
 # StartTimers=1
-<% if @starttimers != undef %>
+<% if @starttimers %>
 StartTimers=<%= @starttimers %>
 <% end %>
 
@@ -225,7 +225,7 @@ StartTimers=<%= @starttimers %>
 #       Only required if Java pollers are started.
 #
 # Mandatory: no
-<% if @javagateway != undef %>
+<% if @javagateway %>
 JavaGateway=<%= @javagateway %>
 <% end %>
 
@@ -236,7 +236,7 @@ JavaGateway=<%= @javagateway %>
 # Range: 1024-32767
 # Default:
 # JavaGatewayPort=10052
-<% if @javagatewayport != undef %>
+<% if @javagatewayport %>
 JavaGatewayPort=<%= @javagatewayport %>
 <% end %>
 
@@ -247,7 +247,7 @@ JavaGatewayPort=<%= @javagatewayport %>
 # Range: 0-1000
 # Default:
 # StartJavaPollers=0
-<% if @startjavapollers != undef %>
+<% if @startjavapollers %>
 StartJavaPollers=<%= @startjavapollers %>
 <% end %>
 
@@ -258,7 +258,7 @@ StartJavaPollers=<%= @startjavapollers %>
 # Range: 0-250
 # Default:
 # StartVMwareCollectors=0
-<% if @startvmwarecollectors != undef %>
+<% if @startvmwarecollectors %>
 StartVMwareCollectors=<%= @startcmwarecollectors %>
 <% end %>
 
@@ -269,7 +269,7 @@ StartVMwareCollectors=<%= @startcmwarecollectors %>
 # Range: 10-86400
 # Default:
 # VMwareFrequency=60
-<% if @startpollers != undef %>
+<% if @startpollers %>
 StartPollers=<%= @startpollers %>
 <% end %>
 
@@ -282,7 +282,7 @@ StartPollers=<%= @startpollers %>
 # Range: 256K-2G
 # Default:
 # VMwareCacheSize=8M
-<% if @vmwarecachesize != undef %>
+<% if @vmwarecachesize %>
 VMwareCacheSize=<%= @vmwarecachesize %>
 <% end %>
 
@@ -301,7 +301,7 @@ SNMPTrapperFile=<%= @snmptrapperfile %>
 # Range: 0-1
 # Default:
 # StartSNMPTrapper=0
-<% if @startsnmptrapper != undef %>
+<% if @startsnmptrapper %>
 StartSNMPTrapper=<%= @startsnmptrapper %>
 <% end %>
 
@@ -312,7 +312,7 @@ StartSNMPTrapper=<%= @startsnmptrapper %>
 # Mandatory: no
 # Default:
 # ListenIP=0.0.0.0
-<% if @listenip != undef %>
+<% if @listenip %>
 ListenIP=<%= @listenip %>
 <% end %>
 
@@ -328,7 +328,7 @@ ListenIP=<%= @listenip %>
 # Range: 1-24
 # Default:
 # HousekeepingFrequency=1
-<% if @housekeepingfrequency != undef %>
+<% if @housekeepingfrequency %>
 HousekeepingFrequency=<%= @housekeepingfrequency %>
 <% end %>
 
@@ -344,7 +344,7 @@ HousekeepingFrequency=<%= @housekeepingfrequency %>
 # Range: 0-1000000
 # Default:
 # MaxHousekeeperDelete=500
-<% if @maxhousekeeperdelete != undef %>
+<% if @maxhousekeeperdelete %>
 MaxHousekeeperDelete=<%= @maxhousekeeperdelete %>
 <% end %>
 
@@ -355,7 +355,7 @@ MaxHousekeeperDelete=<%= @maxhousekeeperdelete %>
 # Range: 5-3600
 # Default:
 # SenderFrequency=30
-<% if @senderfrequency != undef %>
+<% if @senderfrequency %>
 SenderFrequency=<%= @senderfrequency %>
 <% end %>
 
@@ -367,7 +367,7 @@ SenderFrequency=<%= @senderfrequency %>
 # Range: 128K-8G
 # Default:
 # CacheSize=8M
-<% if @cachesize != undef %>
+<% if @cachesize %>
 CacheSize=<%= @cachesize %>
 <% end %>
 
@@ -378,7 +378,7 @@ CacheSize=<%= @cachesize %>
 # Range: 1-3600
 # Default:
 # CacheUpdateFrequency=60
-<% if @cacheupdatefrequency != undef %>
+<% if @cacheupdatefrequency %>
 CacheUpdateFrequency=<%= @cacheupdatefrequency %>
 <% end %>
 
@@ -389,7 +389,7 @@ CacheUpdateFrequency=<%= @cacheupdatefrequency %>
 # Range: 1-100
 # Default:
 # StartDBSyncers=4
-<% if @startdbsyncers != undef %>
+<% if @startdbsyncers %>
 StartDBSyncers=<%= @startdbsyncers %>
 <% end %>
 
@@ -401,7 +401,7 @@ StartDBSyncers=<%= @startdbsyncers %>
 # Range: 128K-2G
 # Default:
 # HistoryCacheSize=8M
-<% if @historycachesize != undef %>
+<% if @historycachesize %>
 HistoryCacheSize=<%= @historycachesize %>
 <% end %>
 
@@ -413,7 +413,7 @@ HistoryCacheSize=<%= @historycachesize %>
 # Range: 128K-2G
 # Default:
 # TrendCacheSize=4M
-<% if @trendcachesize != undef %>
+<% if @trendcachesize %>
 TrendCacheSize=<%= @trendcachesize %>
 <% end %>
 
@@ -425,7 +425,7 @@ TrendCacheSize=<%= @trendcachesize %>
 # Range: 128K-2G
 # Default:
 # HistoryTextCacheSize=16M
-<% if @historytextcachesize != undef %>
+<% if @historytextcachesize %>
 HistoryTextCacheSize=<%= @historytextcachesize %>
 <% end %>
 
@@ -438,7 +438,7 @@ HistoryTextCacheSize=<%= @historytextcachesize %>
 # Range: 0,128K-64G
 # Default:
 # ValueCacheSize=8M
-<% if @valuecachesize != undef %>
+<% if @valuecachesize %>
 ValueCacheSize=<%= @valuecachesize %>
 <% end %>
 
@@ -449,7 +449,7 @@ ValueCacheSize=<%= @valuecachesize %>
 # Range: 1-30
 # Default:
 # Timeout=3
-<% if @timeout != undef %>
+<% if @timeout %>
 Timeout=<%= @timeout %>
 <% end %>
 
@@ -460,7 +460,7 @@ Timeout=<%= @timeout %>
 # Range: 1-300
 # Default:
 # TrapperTimeout=300
-<% if @trappertimeout != undef %>
+<% if @trappertimeout %>
 TrapperTimeout=<%= @trappertimeout %>
 <% end %>
 
@@ -471,7 +471,7 @@ TrapperTimeout=<%= @trappertimeout %>
 # Range: 1-3600
 # Default:
 # UnreachablePeriod=45
-<% if @unreachableperiod != undef %>
+<% if @unreachableperiod %>
 UnreachablePeriod=<%= @unreachableperiod %>
 <% end %>
 
@@ -482,7 +482,7 @@ UnreachablePeriod=<%= @unreachableperiod %>
 # Range: 1-3600
 # Default:
 # UnavailableDelay=60
-<% if @unavailabledelay != undef %>
+<% if @unavailabledelay %>
 UnavailableDelay=<%= @unavailabledelay %>
 <% end %>
 
@@ -493,7 +493,7 @@ UnavailableDelay=<%= @unavailabledelay %>
 # Range: 1-3600
 # Default:
 # UnreachableDelay=15
-<% if @unreachabledelay != undef %>
+<% if @unreachabledelay %>
 UnreachableDelay=<%= @unreachabledelay %>
 <% end %>
 
@@ -520,7 +520,7 @@ ExternalScripts=<%= @externalscripts %>
 # Mandatory: no
 # Default:
 # FpingLocation=/usr/sbin/fping
-<% if @fpinglocation != undef %>
+<% if @fpinglocation %>
 FpingLocation=<%= @fpinglocation %>
 <% end %>
 
@@ -532,7 +532,7 @@ FpingLocation=<%= @fpinglocation %>
 # Mandatory: no
 # Default:
 # Fping6Location=/usr/sbin/fping6
-<% if @fping6ocation != undef %>
+<% if @fping6ocation %>
 Fping6Location=<%= @fping6location %>
 <% end %>
 
@@ -540,7 +540,7 @@ Fping6Location=<%= @fping6location %>
 #       Location of public and private keys for SSH checks and actions.
 #
 # Mandatory: no
-<% if @sshkeylocation != undef %>
+<% if @sshkeylocation %>
 SSHKeyLocation=<%= @sshkeylocation %>
 <% end %>
 
@@ -553,7 +553,7 @@ SSHKeyLocation=<%= @sshkeylocation %>
 # Range: 1-3600000
 # Default:
 # LogSlowQueries=0
-<% if @logslowqueries != undef %>
+<% if @logslowqueries %>
 LogSlowQueries=<%= @logslowqueries %>
 <% end %>
 
@@ -563,7 +563,7 @@ LogSlowQueries=<%= @logslowqueries %>
 # Mandatory: no
 # Default:
 # TmpDir=/tmp
-<% if @tmpdir != undef %>
+<% if @tmpdir %>
 TmpDir=<%= @tmpdir %>
 <% end %>
 
@@ -574,7 +574,7 @@ TmpDir=<%= @tmpdir %>
 # Range: 0-250
 # Default:
 # StartProxyPollers=1
-<% if @startproxypollers != undef %>
+<% if @startproxypollers %>
 StartProxyPollers=<%= @startproxypollers %>
 <% end %>
 
@@ -586,7 +586,7 @@ StartProxyPollers=<%= @startproxypollers %>
 # Range: 1-3600*24*7
 # Default:
 # ProxyConfigFrequency=3600
-<% if @proxyconfigfrequency != undef %>
+<% if @proxyconfigfrequency %>
 ProxyConfigFrequency=<%= @proxyconfigfrequency %>
 <% end %>
 
@@ -598,7 +598,7 @@ ProxyConfigFrequency=<%= @proxyconfigfrequency %>
 # Range: 1-3600
 # Default:
 # ProxyDataFrequency=1
-<% if @proxydatafrequency != undef %>
+<% if @proxydatafrequency %>
 ProxyDataFrequency=<%= @proxydatafrequency %>
 <% end %>
 
@@ -612,7 +612,7 @@ ProxyDataFrequency=<%= @proxydatafrequency %>
 # Mandatory: no
 # Default:
 # AllowRoot=0
-<% if @allowroot != undef %>
+<% if @allowroot %>
 AllowRoot=<%= @allowroot %>
 <% end %>
 
@@ -623,7 +623,7 @@ AllowRoot=<%= @allowroot %>
 # Mandatory: no
 # Default:
 # User=zabbix
-<% if @user != undef %>
+<% if @user %>
 User=<%= @user %>
 <% end %>
 
@@ -632,7 +632,7 @@ User=<%= @user %>
 #       Installing Zabbix will create include directory in /usr/local/etc, unless modified during the compile time.
 #
 # Mandatory: no
-<% if @include != undef %>
+<% if @include %>
 Include=<%= @include %>
 <% end %>
 
@@ -643,7 +643,7 @@ Include=<%= @include %>
 # Mandatory: no
 # Default:
 # SSLCertLocation=${datadir}/zabbix/ssl/certs
-<% if @sslcertlocation != undef %>
+<% if @sslcertlocation %>
 SSLCertLocation=<%= @sslcertlocation %>
 <% end %>
 
@@ -654,7 +654,7 @@ SSLCertLocation=<%= @sslcertlocation %>
 # Mandatory: no
 # Default:
 # SSLKeyLocation=${datadir}/zabbix/ssl/keys
-<% if @sslkeylocation != undef %>
+<% if @sslkeylocation %>
 SSLKeyLocation=<%= @sslkeylocation %>
 <% end %>
 
@@ -664,7 +664,7 @@ SSLKeyLocation=<%= @sslkeylocation %>
 #       This parameter is used only in web monitoring.
 #
 # Mandatory: no
-<% if @sslcalocation != undef %>
+<% if @sslcalocation %>
 SSLCALocation=<%= @sslcalocation %>
 <% end %>
 
@@ -677,7 +677,7 @@ SSLCALocation=<%= @sslcalocation %>
 # Mandatory: no
 # Default:
 # LoadModulePath=${libdir}/modules
-<% if @loadmodulepath != undef %>
+<% if @loadmodulepath %>
 LoadModulePath=<%= @loadmodulepath %>
 <% end %>
 
@@ -688,6 +688,6 @@ LoadModulePath=<%= @loadmodulepath %>
 #       It is allowed to include multiple LoadModule parameters.
 #
 # Mandatory: no
-<% if @loadmodule != undef %>
+<% if @loadmodule %>
 LoadModule=<%= @loadmodule %>
 <% end %>
