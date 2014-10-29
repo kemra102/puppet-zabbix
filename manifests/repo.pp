@@ -10,6 +10,14 @@ class zabbix::repo inherits zabbix::params {
         gpgkey		=> 'http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX',
         gpgcheck	=> true,
       }
+      yumrepo { 'zabbix-non-supported':
+        ensure          => present,
+        descr           => 'Zabbix Official Repository non-supported - $basearch',
+        baseurl         => "http://repo.zabbix.com/non-supported/rhel/$::operatingsystemmajrelease/$::architecture/",
+        enabled         => true,
+        gpgkey          => 'http://repo.zabbix.com/RPM-GPG-KEY-ZABBIX',
+        gpgcheck        => true,
+      }
     }
     'Debian': {
       case $::operatingsystem {
