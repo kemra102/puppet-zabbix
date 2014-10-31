@@ -6,11 +6,12 @@
 2. [Module Description - What the module does and why it is useful](#module-description)
 3. [Setup - The basics of getting started with zabbix](#setup)
     * [What zabbix affects](#what-zabbix-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with zabbix](#beginning-with-zabbix)
+    * [Beginning with Zabbix Client](#beginning-with-zabbix-client)
+    * [Beginning with Zabbix Server](#beginning-with-zabbix-server)
 4. [Usage - Configuration options and additional functionality](#usage)
     * [Usage - Zabbix Client (Agent)](#zabbix-client)
     * [Usage - UserParameters](#userparameters)
+    * [Usage - Zabbix Server](#zabbix-server)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
@@ -27,12 +28,12 @@ The zabbix module currently only supports installing and configuring the Zabbix 
 
 ###What zabbix affects
 
-* zabbix-agent package.
-* zabbix client (agent) configuration file
-* zabbix-agent service.
-* UserParameters
+* Zabbix Client (Agent) Installation, Configuration & Service.
+* UserParameters.
+* Server Installation, Configuration & Service.
+* Zabbix Server WebUI.
 
-###Beginning with zabbix
+###Beginning with Zabbix Client
 
 `include ::zabbix::client` is enough to install the client with a default configuration file.
 
@@ -40,7 +41,7 @@ If you want to specify some parameters, for example setting the **Server** varia
 
 ```puppet
 class { '::zabbix::client':
-  server	=> '192.168.32.100',
+  server => '192.168.32.100',
 }
 ```
 
@@ -51,9 +52,33 @@ Or if you use Hiera:
 zabbix::client::server: '192.168.32.100'
 ```
 
+###Beginning with Zabbix Server
+
+`include ::zabbix::server` is enough to install the server and WebUI with a default configuration file.
+
+If you want to specify some parameters, for example setting some custom database details:
+
+```puppet
+class { '::zabbix::server':
+  dbhost => '192.168.32.100',
+  dbname => 'zabbixserver',
+  dbuser => 'zabbixserver',
+}
+```
+
+Or if you use Hiera:
+
+```puppet
+---
+zabbix::server::dbhost: '192.168.32.100'
+zabbix::server::dbname: 'zabbixserver'
+zabbix::server::dbuser: 'zabbixserver'
+
 ##Usage
 
-Managing the zabbix client is done through the `::zabbix::client` class including affecting it's variables.
+Managing the zabbix client is done through the `::zabbix::client` class including interacting with it's variables.
+
+Managing the zabbix server is done through the `::zabbix::server` class including interacting with it's variables.
 
 ###Zabbix Client
 
@@ -67,7 +92,7 @@ include ::zabbix::client
 
 ```puppet
 class { '::zabbix::client':
-  server	=> '192.168.32.100',
+  server => '192.168.32.100',
 }
 ```
 
@@ -79,6 +104,7 @@ zabbix::client::server: '192.168.32.100'
 zabbix::client::listenport: '10051'
 zabbix::client::listenip: %{::ipaddress_em2}
 ```
+
 ###UserParameters
 
 To create a user parameter include the following in your config:
@@ -100,19 +126,46 @@ zabbix::client::userparameter { 'mysql':
 }
 ```
 
+###Zabbix Server
+
+####I just want Zabbix Server, what's the minimum I need?
+
+```puppet
+include ::zabbix::server
+```
+
+####I want to use PostgreSQL instead of MySQL, what do I need as a minimum?.
+
+```puppet
+class { '::zabbix::server':
+  database => 'pgsql',
+}
+```
+
+####We have a custom set-up and use Hiera to set our config.
+
+```puppet
+---
+zabbix::server::database: 'pgsql'
+```
+
 ##Reference
 
 ###Classes
 
 ####Public Classes
 
-* zabbix::client: Main class for the client (agent), installs, configures and manages the service.
+* zabbix::client: Main class for the client (agent), installs, configures & manages the service.
+* zabbix::client::userparameter: Main class for declaring Zabbix Userparameter's.
+* zabbix::server: Main class for the server & WebUI, installs, configures & manages the service.
 
 ####Private Classes
 
 * zabbix::repo: Sets up the Zabbix repo.
 * zabbix::client::install: Sets up the Zabbix repo, installs the `zabbix-agent` package and manages the zabbix client configuration file.
 * zabbix::client::service: Manages the `zabbix-agent` service.
+* zabbix::server::install: Sets up the Zabbix repo, installs the packages required for the Server, Database conenctivity & WebUI, & manages the zabbix server configuration file.
+* zabbix::server::service: Manages the `zabbix-server` service.
 
 ###Global Parameters
 
@@ -294,13 +347,97 @@ Default: `0`
 
 User-defined parameter to monitor. There can be several user-defined parameters. Format: *UserParameter=<key>,<shell command>*.
 
+###Server Parameters
+
+####`database`
+
+Sets the Database to be used for Zabbix server. Can be one of:
+
+* mysql - MySQL
+* pgsql - PostgreSQL
+* sqlite3 - SQLite
+
+Default: `mysql`
+
+####`web`
+
+Boolean whether or not the WebUI should be installed.
+
+Default: `true`
+
+####`web_packagename`
+
+Defines the package name for the WebUI.
+
+####`web_japanese`
+
+Boolean whether or not the WebUI Japanese language support should be installed.
+
+Default: `false`
+
+####`service_manage`
+
+Boolean whether or not to manage the zabbix-server service.
+
+Default: `true`
+
+####`service_ensure`
+
+Whether or not the service should be one of 2 values; `running` or `stopped`.
+
+Default: `running`
+
+####`service_enable`
+
+Boolean whether or not the service should be started on system boot.
+
+Default: `true`
+
+####`listenport`
+
+Listen port for trapper.
+
+Default: `10051`
+
+####`sourceip`
+
+Source IP address for outgoing connections.
+
+####`logfile`
+
+Name of log file. If not set, syslog is used.
+
+Default: `/var/log/zabbix/zabbix_server.log`
+
+####`logfilesize`
+
+Maximum size of log file in MB. ***0*** - disable automatic log rotation.
+
+Default: `0`
+
+####`debuglevel`
+
+* 0 - No debug.
+* 1 - Critical info.
+* 2 - Error info.
+* 3 - Warnings.
+* 4 - For debugging (produces LOTS of info).
+
+Default: `3`
+
+####`pidfile`
+
+Name of PID file.
+
+Default: `/var/run/zabbix/zabbix_server.pid`
+
 ##Limitations
 
 This module has been tested against the latest version of Puppet from the Puppetlabs repo for platforms it is tested on.
 
 The module has been tested on:
 
-* CentOS 5.11/6.5
+* CentOS 5.11/6.6
 * Scientific Linux 5.10/6.5
 * Oracle Linux 5.11/6.5
 * Ubuntu 10.04/12.04/14.04
