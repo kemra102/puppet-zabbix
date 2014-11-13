@@ -13,3 +13,9 @@ v0.2.1
 * Added $zabbix::client::service_manage parameter as per Issue 1: https://github.com/kemra102/puppet-zabbix/issues/1
 * Fixed support for RedHat, Scientific Linux & Oracle Linux as per Issue 2: https://github.com/kemra102/puppet-zabbix/issues/2
 * Confirmed module running on Scientific Linux & Oracle Linux.
+
+v0.3.0
+
+* Added support for creating UserParameter's.
+* Added server support. This will get a server up and running OK, some features here may be lacking and will be improved upon in future releases.
+* Now provides facts for the versions of Zabbix Server & Zabbix Client installed on a node.

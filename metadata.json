@@ -1,6 +1,6 @@
 {
   "name": "kemra102-zabbix",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "Danny Roberts",
   "license": "BSD 2-Clause",
   "summary": "Module for managing Zabbix Server & Client.",
@@ -15,7 +15,7 @@
     },
     {
     "operatingsystem": "CentOS",
-    "operatingsystemrelease": [ "5.11", "6.5" ]
+    "operatingsystemrelease": [ "5.11", "6.5", "6.6" ]
     },
     {
     "operatingsystem":"Scientific",
