@@ -85,7 +85,7 @@ class zabbix::params {
   $server_startjavapollers		= undef
   $server_startvmwarecollectors		= undef
   $server_vmwarecachesize		= undef
-  $server_snmptrapperfile		= undef
+  $server_snmptrapperfile		= '/var/log/snmptt/snmptt.log'
   $server_startsnmptrapper		= undef
   $server_listenip			= undef
   $server_housekeepingfrequency		= undef
