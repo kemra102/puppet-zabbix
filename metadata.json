@@ -5,7 +5,7 @@
   "license": "BSD 2-Clause",
   "summary": "Module for managing Zabbix Server & Client.",
   "source": "https://github.com/kemra102/puppet-zabbix",
-  "project_page": "(https://github.com/kemra102/puppet-zabbix)",
+  "project_page": "https://github.com/kemra102/puppet-zabbix",
   "issues_url": "https://github.com/kemra102/puppet-zabbix/issues",
   "tags": ["zabbix", "monitoring"],
   "operatingsystem_support": [
