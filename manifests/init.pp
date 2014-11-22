@@ -38,5 +38,6 @@
 class zabbix {
 
   include ::zabbix::client
+  include ::zabbix::server
 
 }
