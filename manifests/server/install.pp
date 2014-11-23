@@ -1,9 +1,9 @@
 class zabbix::server::install (
 
-  $database		= $zabbix::server::database,
-  $web			= $zabbix::server::web,
-  $web_packagename	= $zabbix::server::web_packagename,
-  $web_japanese		= $zabbix::server::web_japanese,
+  $database        = $zabbix::server::database,
+  $web             = $zabbix::server::web,
+  $web_packagename = $zabbix::server::web_packagename,
+  $web_japanese    = $zabbix::server::web_japanese,
 
 ) inherits zabbix::server {
 
@@ -11,14 +11,14 @@ class zabbix::server::install (
   include ::zabbix::repo
 
   package { 'zabbix-server':
-    name   => "zabbix-server-$database",
     ensure => present,
+    name   => "zabbix-server-${database}",
   }
 
   if $web == true {
     package { 'zabbix-web':
-      name    => $web_packagename,
       ensure  => present,
+      name    => $web_packagename,
       require => Package['zabbix-server'],
     }
   }
@@ -33,7 +33,7 @@ class zabbix::server::install (
   file { '/etc/zabbix/zabbix_server.conf':
     ensure  => file,
     content => template('zabbix/zabbix_server.conf.erb'),
-    mode    => '640',
+    mode    => '0640',
     owner   => 'root',
     group   => 'root',
     require => Package['zabbix-server'],
