@@ -129,6 +129,7 @@ class zabbix::params {
       case $::operatingsystemmajrelease {
         '5': { $version = '2.2' }
         '6': { $version = '2.4' }
+        '7': { $version = '2.4' }
         default: {
           fail("${::operatingsystem} ${::operatingsystemmajrelease} 
           is not supported by this module.")
