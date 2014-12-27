@@ -20,6 +20,6 @@ v0.3.0
 * Added server support. This will get a server up and running OK, some features here may be lacking and will be improved upon in future releases.
 * Now provides facts for the versions of Zabbix Server & Zabbix Client installed on a node.
 
-next
+v0.3.1
 
 * Added EL7 support now that Zabbix has it.
