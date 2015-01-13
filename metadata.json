@@ -1,6 +1,6 @@
 {
   "name": "kemra102-zabbix",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Danny Roberts",
   "license": "BSD-2-Clause",
   "summary": "Module for managing Zabbix Server & Client.",

@@ -23,3 +23,7 @@ v0.3.0
 v0.3.1
 
 * Added EL7 support now that Zabbix has it.
+
+v0.3.2
+
+* Fixed Issue #10 - Proper scoping of version variable.
