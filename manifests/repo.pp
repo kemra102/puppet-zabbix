@@ -1,8 +1,14 @@
-class zabbix::repo (
+class zabbix::repo {
 
-  $version = $::zabbix::params::version
-
-) inherits zabbix::params {
+  if $::zabbix::server::version != undef {
+    $version = $::zabbix::server::version
+  }
+  elsif $::zabbix::client::version != undef {
+    $version = $::zabbix::client::version
+  }
+  else {
+    $version = $::zabbix::params::version
+  }
 
   case $::osfamily {
     'RedHat': {

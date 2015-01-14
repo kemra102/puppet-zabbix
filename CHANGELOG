@@ -27,3 +27,7 @@ v0.3.1
 v0.3.2
 
 * Fixed Issue #10 - Proper scoping of version variable.
+
+next
+
+* Fixed Issue #12 - More fine grained control of the Zabbix version to be installed.
