@@ -179,6 +179,41 @@ Defaults:
 * EL 5, Ubuntu 12.04 & Debian 6: 2.2
 * Ubuntu 10.04: 2.0
 
+This can be changed in one of three ways:
+
+```puppet
+class { '::zabbix::client':
+  server  => '192.168.0.100',
+  version => '2.2',
+}
+```
+```puppet
+class { '::zabbix::server':
+  server  => '192.168.0.100',
+  version => '2.2',
+}
+```
+
+Both will set the repo version on any node they are applied to with a precendence of:
+
+* `server`
+* `client`
+* default
+
+You can also set the versions via Hiera (where we actually get 3 way's of setting it instead of 2):
+
+```puppet
+zabbix::client::version: '2.2'
+```
+
+```puppet
+zabbix::server::version: '2.2'
+```
+
+```puppet
+zabbix::version: '2.2'
+```
+
 ###Client Parameters
 
 ####`service_manage`
