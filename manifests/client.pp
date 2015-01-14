@@ -30,6 +30,8 @@ class zabbix::client (
   $unsafeuserparameters = $zabbix::params::client_unsafeuserparameters,
   $userparameter        = $zabbix::params::client_userparameter,
 
+  $version              = undef,
+
   ) inherits zabbix::params {
 
   # Validate our variables
