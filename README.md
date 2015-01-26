@@ -47,7 +47,7 @@ class { '::zabbix::client':
 
 Or if you use Hiera:
 
-```puppet
+```yaml
 ---
 zabbix::client::server: '192.168.32.100'
 ```
@@ -68,11 +68,12 @@ class { '::zabbix::server':
 
 Or if you use Hiera:
 
-```puppet
+```yaml
 ---
 zabbix::server::dbhost: '192.168.32.100'
 zabbix::server::dbname: 'zabbixserver'
 zabbix::server::dbuser: 'zabbixserver'
+```
 
 ##Usage
 
@@ -134,7 +135,7 @@ zabbix::client::userparameter { 'mysql':
 include ::zabbix::server
 ```
 
-####I want to use PostgreSQL instead of MySQL, what do I need as a minimum?.
+####I want to use PostgreSQL instead of MySQL, what do I need as a minimum?
 
 ```puppet
 class { '::zabbix::server':
