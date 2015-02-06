@@ -19,6 +19,7 @@ define zabbix::client::userparameter (
   file { "/etc/zabbix/zabbix_agentd.d/userparameter_${name}.conf":
     ensure  => $ensure,
     content => template('zabbix/user_parameter.conf.erb'),
+    notify  => Service['zabbix-agent'],
   }
 
 }
