@@ -99,8 +99,19 @@ class { '::zabbix::client':
 
 ####We have a custom set-up and use Hiera to set our config.
 
-```puppet
+```yaml
 ---
+zabbix::client::server: '192.168.32.100'
+zabbix::client::listenport: '10051'
+zabbix::client::listenip: %{::ipaddress_em2}
+```
+
+If you also use Hiera to define included classes:
+
+```yaml
+---
+classes:
+  - zabbix::client
 zabbix::client::server: '192.168.32.100'
 zabbix::client::listenport: '10051'
 zabbix::client::listenip: %{::ipaddress_em2}
@@ -125,6 +136,28 @@ zabbix::client::userparameter { 'mysql':
   key     => 'mysql.ping',
   command => 'mysqladmin -uroot ping|grep -c alive',
 }
+```
+
+If you have something like this in your Puppet code:
+
+```puppet
+# Use Hiera to create zabbix userparameters
+$zabbix_userparameters = hiera_hash('zabbix_userparameters', undef)
+
+if ($zabbix_userparameters != undef) {
+  create_resources('::zabbix::client::userparameter', $zabbix_userparameters)
+}
+```
+
+you can use Hiera to define Zabbiz user parameters:
+
+```yaml
+---
+zabbix_userparameters:
+  'mysql':
+    comment: 'Check if MySQL is alive.'
+    key: 'mysql.ping'
+    command: 'mysqladmin -uroot ping|grep -c alive'
 ```
 
 ###Zabbix Server
