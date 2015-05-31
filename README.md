@@ -1,4 +1,4 @@
-# zabbix
+# zabbix [![Build Status](https://travis-ci.org/kemra102/puppet-zabbix.svg?branch=master)](https://travis-ci.org/kemra102/puppet-zabbix)
 
 ####Table of Contents
 
