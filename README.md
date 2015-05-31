@@ -211,7 +211,6 @@ Defaults:
 
 * EL 6 & 7, Ubuntu 14.04 & Debian 7: 2.4
 * EL 5, Ubuntu 12.04 & Debian 6: 2.2
-* Ubuntu 10.04: 2.0
 
 This can be changed in one of three ways:
 
@@ -850,15 +849,16 @@ This module has been tested against the latest version of Puppet from the Puppet
 
 The module has been tested on:
 
-* CentOS 5.11/6.6
-* Scientific Linux 5.10/6.5
-* Oracle Linux 5.11/6.5
-* Ubuntu 10.04/12.04/14.04
+* CentOS 5/6
+* Scientific Linux 5/6
+* Oracle Linux 5/6
+* Ubuntu 12.04/14.04
 * Debian 6/7
 
 This module should also work fine on:
 
 * Red Hat Enterprise Linux 5/6
+* Enterprise Linux 7
 
 ##Development
 
