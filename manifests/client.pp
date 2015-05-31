@@ -41,7 +41,7 @@ class zabbix::client (
   validate_absolute_path($logfile)
   validate_string($logfilesize)
   validate_string($debuglevel)
-  validate_string($sourecip)
+  validate_string($sourceip)
   validate_string($enableremotecommands)
   validate_string($logremotecommands)
   validate_string($server)
