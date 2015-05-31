@@ -50,13 +50,13 @@ class zabbix::repo (
           }
         }
         default: {
-          fail("${::operatingsystem} ${::operatingsystemmajrelease} 
+          fail("${::operatingsystem} ${::operatingsystemmajrelease}
           is not supported by this module.")
         }
       }
     }
     default: {
-      fail("${::operatingsystem} ${::operatingsystemmajrelease} 
+      fail("${::operatingsystem} ${::operatingsystemmajrelease}
       is not supported by this module.")
     }
   }

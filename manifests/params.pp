@@ -131,7 +131,7 @@ class zabbix::params {
         '6': { $version = '2.4' }
         '7': { $version = '2.4' }
         default: {
-          fail("${::operatingsystem} ${::operatingsystemmajrelease} 
+          fail("${::operatingsystem} ${::operatingsystemmajrelease}
           is not supported by this module.")
         }
       }
@@ -143,7 +143,7 @@ class zabbix::params {
         '12.04': { $version = '2.2' }
         '14.04': { $version = '2.4' }
         default: {
-          fail("${::operatingsystem} ${::operatingsystemmajrelease} 
+          fail("${::operatingsystem} ${::operatingsystemmajrelease}
           is not supported by this module.")
         }
       }
@@ -154,7 +154,7 @@ class zabbix::params {
         '7': { $version = '2.4' }
         '6': { $version = '2.2' }
         default: {
-          fail("${::operatingsystem} ${::operatingsystemmajrelease} 
+          fail("${::operatingsystem} ${::operatingsystemmajrelease}
           is not supported by this module.")
         }
       }

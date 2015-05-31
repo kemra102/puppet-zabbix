@@ -13,7 +13,7 @@ define zabbix::client::userparameter (
   validate_string($command)
 
   validate_re($ensure, '^(present|absent)$',
-    "${ensure} is not supported for ensure. 
+    "${ensure} is not supported for ensure.
     Allowed values are 'present' and 'absent'.")
 
   file { "/etc/zabbix/zabbix_agentd.d/userparameter_${name}.conf":

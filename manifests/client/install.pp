@@ -1,9 +1,9 @@
-class zabbix::client::install ( 
+class zabbix::client::install (
 
 ) inherits zabbix::client {
 
-  require ::zabbix::repo
-  include ::zabbix::repo
+  require '::zabbix::repo'
+  include '::zabbix::repo'
 
   package { 'zabbix-agent':
     ensure => present,

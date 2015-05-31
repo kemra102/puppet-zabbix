@@ -6,7 +6,7 @@ class zabbix::server::service (
 
 ) inherits zabbix::server {
 
-  if $service_manage == true {
+  if $service_manage {
     service { 'zabbix-server':
       ensure     => $service_ensure,
       enable     => $service_enable,

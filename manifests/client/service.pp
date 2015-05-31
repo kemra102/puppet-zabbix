@@ -6,7 +6,7 @@ class zabbix::client::service (
 
 ) inherits zabbix::client {
 
-  if $service_manage == true {
+  if $service_manage {
     service { 'zabbix-agent':
       ensure     => $service_ensure,
       enable     => $service_enable,

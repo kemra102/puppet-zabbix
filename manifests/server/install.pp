@@ -7,15 +7,15 @@ class zabbix::server::install (
 
 ) inherits zabbix::server {
 
-  require ::zabbix::repo
-  include ::zabbix::repo
+  require '::zabbix::repo'
+  include '::zabbix::repo'
 
   package { 'zabbix-server':
     ensure => present,
     name   => "zabbix-server-${database}",
   }
 
-  if $web == true {
+  if $web {
     package { 'zabbix-web':
       ensure  => present,
       name    => $web_packagename,
