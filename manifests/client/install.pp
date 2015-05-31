@@ -1,4 +1,6 @@
-class zabbix::client::install inherits zabbix::client {
+class zabbix::client::install ( 
+
+) inherits zabbix::client {
 
   require ::zabbix::repo
   include ::zabbix::repo

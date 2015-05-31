@@ -70,8 +70,6 @@ class zabbix::server (
   $loadmodulepath          = $zabbix::params::server_loadmodulepath,
   $loadmodule              = $zabbix::params::server_loadmodule,
 
-  $version                 = undef,
-
 ) inherits zabbix::params {
 
   # Validate the variables

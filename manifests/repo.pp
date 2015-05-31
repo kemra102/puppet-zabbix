@@ -1,14 +1,8 @@
-class zabbix::repo {
+class zabbix::repo (
 
-  if $::zabbix::server::version != undef {
-    $version = $::zabbix::server::version
-  }
-  elsif $::zabbix::client::version != undef {
-    $version = $::zabbix::client::version
-  }
-  else {
-    $version = $::zabbix::params::version
-  }
+  $version = $::zabbix::params::version,
+
+) inherits zabbix::params {
 
   case $::osfamily {
     'RedHat': {
@@ -32,24 +26,38 @@ class zabbix::repo {
     'Debian': {
       case $::operatingsystem {
         'Ubuntu': {
+          include '::apt'
           apt::source { 'ubuntu-zabbix':
-            location   => "http://repo.zabbix.com/zabbix/${version}/ubuntu/",
-            release    => "${::lsbdistcodename}",
-            repos      => 'main non-free contrib',
-            key        => '79EA5ED4',
-            key_server => 'keyserver.ubuntu.com',
+            location => "http://repo.zabbix.com/zabbix/${version}/ubuntu/",
+            release  => $::lsbdistcodename,
+            repos    => 'main non-free contrib',
+            key      => {
+              id     => '79EA5ED4',
+              server => 'keyserver.ubuntu.com',
+            },
           }
         }
         'Debian': {
+          include '::apt'
           apt::source { 'debian-zabbix':
-            location   => "http://repo.zabbix.com/zabbix/${version}/debian/",
-            release    => "${::lsbdistcodename}",
-            repos      => 'main non-free contrib',
-            key        => '79EA5ED4',
-            key_server => 'keyserver.ubuntu.com',
+            location => "http://repo.zabbix.com/zabbix/${version}/debian/",
+            release  => $::lsbdistcodename,
+            repos    => 'main non-free contrib',
+            key      => {
+              id     => '79EA5ED4',
+              server => 'keyserver.ubuntu.com',
+            },
           }
         }
+        default: {
+          fail("${::operatingsystem} ${::operatingsystemmajrelease} 
+          is not supported by this module.")
+        }
       }
+    }
+    default: {
+      fail("${::operatingsystem} ${::operatingsystemmajrelease} 
+      is not supported by this module.")
     }
   }
 
