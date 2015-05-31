@@ -209,7 +209,7 @@ Sets the version of Zabbix to be used.
 
 Defaults:
 
-* EL 6, Ubuntu 14.04 & Debian 7: 2.4
+* EL 6 & 7, Ubuntu 14.04 & Debian 7: 2.4
 * EL 5, Ubuntu 12.04 & Debian 6: 2.2
 * Ubuntu 10.04: 2.0
 
